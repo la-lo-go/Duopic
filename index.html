@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duopic - Create Photo Collages</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #111827;
+            color: #e5e7eb;
+        }
+        .canvas-container {
+            width: 900px;
+            height: 500px;
+            position: relative;
+            cursor: pointer;
+        }
+        #collage-canvas {
+            border-radius: 8px;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #8b5cf6, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <div class="container mx-auto px-4 py-12 max-w-5xl">
+        <h1 class="text-5xl font-extrabold text-center gradient-text mb-4">Duopic</h1>
+        
+            <div class="canvas-container mx-auto my-12">
+                <canvas id="collage-canvas" width="900" height="500"></canvas>
+            </div>
+            
+            <div id="error-message" class="text-red-400 text-center mb-6 hidden"></div>
+            
+            <div class="flex justify-center space-x-6">
+                <a id="download-link" download="duopic_collage.png" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Download Collage
+                </a>
+                <button id="reset-button" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    Reset
+                </button>
+            </div>
+    </div>
+    
+    <input id="left-image-upload" type="file" accept="image/*" class="hidden">
+    <input id="right-image-upload" type="file" accept="image/*" class="hidden">
+    
+    <script src="script.js"></script>
+</body>
+</html>
