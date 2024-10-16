@@ -1,6 +1,6 @@
 # Duopic
 
-Duopic is a sleek, vanilla js web app for creating dual-image collages optimized for twitter previews.
+Duopic is a sleek, vanilla js web app for creating dual-image collages optimized for Twitter (X) previews.
 
 ## Features
 
